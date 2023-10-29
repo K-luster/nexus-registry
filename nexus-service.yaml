@@ -10,6 +10,7 @@ metadata:
   name: nexus
   namespace: nexus
 spec:
+  clusterIP: None
   ports:
     - name: "8081"
       port: 8081
@@ -19,5 +20,6 @@ spec:
       targetPort: 5000
   selector:
     io.kompose.service: nexus
-  type: LoadBalancer
-  loadBalancerIP: 192.168.0.254
+  type: ClusterIP
+status:
+  loadBalancer: {}
