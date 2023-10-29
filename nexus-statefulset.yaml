@@ -54,8 +54,4 @@ spec:
           - ReadWriteOnce
         resources:
           requests:
-            storage: 100Mi
-      status: {}
-status:
-  availableReplicas: 0
-  replicas: 0
+            storage: 10Gi
