@@ -12,6 +12,7 @@ services:
     environment:
       - INSTALL4J_ADD_VM_PARAMS=-Xms2g -Xmx2g
       - Djava.util.prefs.userRoot=/opt/sonatype/sonatype-work/nexus3/javaprefs
+      - Djava.util.prefs.systemRoot=/opt/sonatype/sonatype-work/nexus3/javaprefs
 networks:
   default:
     external:
