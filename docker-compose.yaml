@@ -11,7 +11,7 @@ services:
       - ./data:/nexus-data
     environment:
       - INSTALL4J_ADD_VM_PARAMS=-Xms2g -Xmx2g
-      - Djava.util.prefs.userRoot=/nexus-data/lock
+      - Djava.util.prefs.userRoot=/opt/sonatype/sonatype-work/nexus3/javaprefs
 networks:
   default:
     external:
