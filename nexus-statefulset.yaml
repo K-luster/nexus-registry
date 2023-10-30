@@ -25,7 +25,7 @@ spec:
       containers:
         - env:
             - name: Djava.util.prefs.userRoot
-              value: /nexus-data/lock
+              value: /opt/sonatype/sonatype-work/nexus3/javaprefs
             - name: INSTALL4J_ADD_VM_PARAMS
               value: -Xms2g -Xmx2g
           image: sonatype/nexus3:latest
