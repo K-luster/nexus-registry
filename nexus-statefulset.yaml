@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   annotations:
-    kompose.cmd: kompose -f docker-compose.yaml -n nexus --controller statefulset convert
+    kompose.cmd: kompose -f docker-compose.yaml --controller statefulset -n nexus convert
     kompose.version: 1.31.2 (a92241f79)
   creationTimestamp: null
   labels:
@@ -24,12 +24,8 @@ spec:
     spec:
       containers:
         - env:
-            - name: Djava.util.prefs.userRoot
-              value: /opt/sonatype/sonatype-work/nexus3
             - name: INSTALL4J_ADD_VM_PARAMS
-              value: -Xms2g -Xmx2g
-            - name: Djava.util.prefs.systemRoot
-              value: /opt/sonatype/sonatype-work/nexus3
+              value: -Xms2703m -Xmx2703m -XX:MaxDirectMemorySize=2703m -Djava.util.prefs.userRoot=/nexus-data
           image: sonatype/nexus3:latest
           name: nexus
           ports:
@@ -57,4 +53,4 @@ spec:
         resources:
           requests:
             storage: 10Gi
-            cpu: "4"
+	    cpu: "4"
